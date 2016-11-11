@@ -22,9 +22,9 @@ var cred = {
 	"mqtt_s_port": 8883,
 	"http_host": "g9hl6b.internetofthings.ibmcloud.com",
 	"org": "g9hl6b",
-	"apiKey": "a-g9hl6b-z2dxe373me",
-	"apiToken": "fY*MfdfhM-O3&SYP9H"
-};
+	"apiKey": "a-g9hl6b-vblfz7mgeu",
+	"apiToken": "yXCasW59afTRUmhvO&"
+}, ;
 if (process.env.VCAP_SERVICES) {
 	config = JSON.parse(process.env.VCAP_SERVICES);
 
@@ -55,15 +55,15 @@ var options = {
 	auth: basicConfig.apiKey + ':' + basicConfig.apiToken
 };
 app.get('/check', function (req, res) {
-	
+
 	var appClientConfig = {
-        "org" : credentials.org,
-        "id" : credentials.iotCredentialsIdentifier,
-        "auth-key" : credentials.apiKey,
-        "auth-token" : credentials.apiToken
-    }
-	
-	
+		"org": credentials.org,
+		"id": credentials.iotCredentialsIdentifier,
+		"auth-key": credentials.apiKey,
+		"auth-token": credentials.apiToken
+	}
+
+
 	var appClient = new Client.IotfApplication(appClientConfig);
 
 	appClient.connect();
