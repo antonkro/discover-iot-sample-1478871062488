@@ -75,9 +75,10 @@ app.get('/check', function (req, res) {
 	appClient.on("deviceEvent", function (deviceType, deviceId, eventType, format, payload) {
 
 		console.log("Device Event from :: " + deviceType + " : " + deviceId + " of event " + eventType + " with payload : " + payload);
-		var ax = payload.d.ax;
-		var ay = payload.d.ay;
-		var az = payload.d.az;
+		payload_json = JSON.parse(payload);
+		var ax = payload_json.d.ax;
+		var ay = payload_json.d.ay;
+		var az = payload_json.d.az;
 
 		if (ax < 1 || ay < 1 || az < 1 || ax > 1 || ax > 1 || ax > 1) {
 			res.send('Device is not moving');
