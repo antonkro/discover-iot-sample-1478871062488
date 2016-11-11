@@ -63,14 +63,13 @@ app.get('/check', function (req, res) {
 		"auth-token": credentials.apiToken
 	}
 
-
 	var appClient = new Client.IotfApplication(appClientConfig);
 
 	appClient.connect();
 
 	appClient.on("connect", function () {
 
-		appClient.subscribeToDeviceEvents("myDeviceType", "device01", "+", "json");
+		appClient.subscribeToDeviceEvents("iot-phone", "+", "+", "json");
 
 	});
 	appClient.on("deviceEvent", function (deviceType, deviceId, eventType, format, payload) {
@@ -80,10 +79,10 @@ app.get('/check', function (req, res) {
 		var ay = payload.d.ay;
 		var az = payload.d.az;
 
-		if (ax < 1 || ay < 1 ||az < 1 || ax >1 || ax > 1 || ax > 1 ){
+		if (ax < 1 || ay < 1 || az < 1 || ax > 1 || ax > 1 || ax > 1) {
 			res.send('Device is not moving');
 		}
-		else{
+		else {
 			res.send('Device is moving');
 		}
 	});
