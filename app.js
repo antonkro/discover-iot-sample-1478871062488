@@ -76,7 +76,7 @@ app.get('/check', function (req, res) {
 
 		console.log("Device Event from :: " + deviceType + " : " + deviceId + " of event " + eventType + " with payload : " + payload);
 		if (payload) {
-			payload_json = JSON.parse(payload);
+			var payload_json = JSON.parse(payload);
 			var ax = payload_json.d.ax;
 			var ay = payload_json.d.ay;
 			var az = payload_json.d.az;
