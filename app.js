@@ -24,7 +24,7 @@ var cred = {
 	"org": "g9hl6b",
 	"apiKey": "a-g9hl6b-vblfz7mgeu",
 	"apiToken": "yXCasW59afTRUmhvO&"
-}, ;
+};
 if (process.env.VCAP_SERVICES) {
 	config = JSON.parse(process.env.VCAP_SERVICES);
 
