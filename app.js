@@ -58,7 +58,7 @@ app.get('/check', function (req, res) {
 	
 	var appClientConfig = {
         "org" : credentials.org,
-        "id" : credentials.appId,
+        "id" : credentials.iotCredentialsIdentifier,
         "auth-key" : credentials.apiKey,
         "auth-token" : credentials.apiToken
     }
